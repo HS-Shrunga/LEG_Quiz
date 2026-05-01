@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, BookOpen, Rocket, ShieldCheck, Sparkles } from 'lucide-react';
+import { Play, BookOpen, Rocket, ShieldCheck, Sparkles, GraduationCap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import GlassCard from '../components/GlassCard';
 
@@ -8,9 +8,9 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const features = [
-    { icon: <BookOpen />, title: 'CS Theory', desc: 'Computer fundamentals & OS' },
-    { icon: <Rocket />, title: 'Intelligence', desc: 'AI & Machine Learning basics' },
-    { icon: <ShieldCheck />, title: 'Logic', desc: 'Mental ability & Mathematics' },
+    { icon: <Rocket />, title: 'AI & ML Magic', desc: 'Dive into Neural Networks and AI wizardry' },
+    { icon: <BookOpen />, title: 'CS Core', desc: 'Prove you know your OS and Data Structures' },
+    { icon: <ShieldCheck />, title: 'Logic Tests', desc: 'Flex those big brain muscles with pure math and logic' },
   ];
 
   // Stagger animation for main heading
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
         <div className="bg-orb bg-orb-2 opacity-50"></div>
         <div className="bg-orb bg-orb-3 opacity-40"></div>
       </div>
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-bg-dark/80 via-transparent to-bg-dark" />
+      <div className="absolute inset-0 z-10 bg-black/20" />
 
       {/* Content */}
       <div className="relative z-20 pt-48 px-6 pb-20 max-w-6xl mx-auto flex flex-col items-center text-center">
@@ -68,11 +68,28 @@ const Home: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-slate-400/90 max-w-3xl mb-16 leading-relaxed px-4 font-medium"
         >
-          An immersive quizzing experience designed for elite Computer Science students. 
-          Test your foundation in <span className="text-white">Core Fundamentals</span>, 
-          <span className="text-white"> Mathematics</span>, and 
-          <span className="text-white"> Artificial Intelligence</span>.
+          Ready to melt your brain? 🧠 Jump into the ultimate tech challenge.
+          Show off your skills in <span className="text-white">AI & ML</span>, 
+          <span className="text-white"> CS Fundamentals</span>, and 
+          <span className="text-white"> Logic</span>.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="max-w-2xl mb-16 p-6 rounded-3xl border border-primary/30 bg-primary/5 shadow-[0_0_30px_rgba(99,102,241,0.1)] flex items-start gap-4 text-left"
+        >
+          <div className="p-3 rounded-2xl bg-primary/20 text-primary shrink-0">
+            <GraduationCap size={28} />
+          </div>
+          <div>
+            <h3 className="text-white font-bold text-xl mb-2">Epic Scholarships Ahead! 🏆</h3>
+            <p className="text-slate-300 leading-relaxed text-sm">
+              We're throwing <span className="text-white font-bold">exclusive scholarships</span> at the top nerds who conquer this challenge. Show us what you're made of!
+            </p>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -83,12 +100,12 @@ const Home: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/quiz')}
+            onClick={() => navigate('/setup')}
             className="group relative flex items-center gap-4 px-12 py-6 rounded-3xl bg-white text-bg-dark font-black text-xl shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <Play size={26} fill="currentColor" className="relative z-10 text-primary" />
-            <span className="relative z-10">Start Foundation Quiz</span>
+            <span className="relative z-10">Let's Dive In!</span>
           </motion.button>
           
           <motion.button

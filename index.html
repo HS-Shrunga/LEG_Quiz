@@ -5,6 +5,25 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>quizz-master</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'bg-dark': 'var(--bg-dark)',
+              'bg-deep': 'var(--bg-deep)',
+              primary: 'var(--primary)',
+              secondary: 'var(--secondary)',
+              accent: 'var(--accent)',
+              success: 'var(--success)',
+              danger: 'var(--danger)',
+              warning: 'var(--warning)',
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

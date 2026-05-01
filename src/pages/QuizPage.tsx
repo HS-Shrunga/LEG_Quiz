@@ -12,7 +12,7 @@ const QuizPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-bg-dark">
+    <div className="min-h-screen bg-transparent">
       <QuizEngine onComplete={handleComplete} />
     </div>
   );

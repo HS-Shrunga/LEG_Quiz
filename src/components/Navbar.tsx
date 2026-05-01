@@ -1,9 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Award, HelpCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
+
+  if (location.pathname === '/quiz') {
+    return null;
+  }
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -20,16 +26,16 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
 
-        <div className="flex items-center gap-10">
-          <Link to="/" className="text-sm font-semibold text-slate-400 hover:text-white transition-colors decoration-none tracking-wide">
+        <div className="flex items-center gap-6">
+          <Link to="/" className="px-5 py-2.5 rounded-xl text-base font-bold text-white bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all shadow-lg tracking-wide flex items-center justify-center">
             Home
           </Link>
-          <Link to="/leaderboard" className="flex items-center gap-2.5 text-sm font-semibold text-slate-400 hover:text-white transition-colors decoration-none tracking-wide">
-            <Award size={18} className="text-indigo-500" />
-            Leaderboard
+          <Link to="/leaderboard" className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-base font-bold text-white bg-indigo-500/20 border border-indigo-500/30 hover:bg-indigo-500/30 hover:border-indigo-500/50 transition-all shadow-lg tracking-wide">
+            <Award size={20} className="text-indigo-400" />
+            Leadership Board
           </Link>
-          <div className="h-4 w-px bg-white/10 mx-2" />
-          <HelpCircle size={20} className="text-slate-500 cursor-help hover:text-indigo-400 transition-colors" />
+          <div className="h-6 w-px bg-white/20 mx-2" />
+          <HelpCircle size={24} className="text-white/80 cursor-help hover:text-white transition-colors" />
         </div>
       </div>
     </motion.nav>
